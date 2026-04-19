@@ -271,8 +271,3 @@ Only templates and source code stay tracked.
 
 - Subtitles not visible or too high/low
   - Tune `TTS_SUBTITLE_MARGIN_V`, `TTS_SUBTITLE_MARGIN_L`, `TTS_SUBTITLE_FONT_SIZE`.
-
-## License Notes
-
-This project includes FFmpeg assets under `ffmpeg-build/`.
-Review upstream FFmpeg license files before redistribution.
