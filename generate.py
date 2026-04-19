@@ -96,7 +96,7 @@ def ensure_environment() -> None:
     missing = [str(path) for path in required_binaries if not path.exists()]
     if missing:
         raise FileNotFoundError(
-            "Missing required binaries in social-engine/bin: " + ", ".join(missing)
+            "Missing required binaries in bin: " + ", ".join(missing)
         )
 
 

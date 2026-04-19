@@ -13,30 +13,27 @@ venv/
 .venv/
 env/
 ENV/
-social-engine/venv/
 
 # Secrets
 .env
 .env.*
 !.env.example
-social-engine/.env
-!social-engine/.env.example
 
 # Local runtime content
-social-engine/output/*
-!social-engine/output/.gitkeep
-social-engine/assets/*
-!social-engine/assets/.gitkeep
-social-engine/output_capture.txt
+output/*
+!output/.gitkeep
+assets/*
+!assets/.gitkeep
+output_capture.txt
 
 # Local FFmpeg binaries/build bundle
-social-engine/bin/ffmpeg.exe
-social-engine/bin/ffprobe.exe
-social-engine/ffmpeg-build/
+bin/ffmpeg.exe
+bin/ffprobe.exe
+ffmpeg-build/
 
 # Optional local model cache
-social-engine/models/kokoro/*.onnx
-social-engine/models/kokoro/*.bin
+models/kokoro/*.onnx
+models/kokoro/*.bin
 
 # Build/temp artifacts
 *.tmp

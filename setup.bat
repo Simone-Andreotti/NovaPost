@@ -25,11 +25,11 @@ if not exist bin\ffprobe.exe (
 )
 
 if not exist bin\ffmpeg.exe (
-    echo Missing bin\ffmpeg.exe. Place ffmpeg.exe in social-engine\bin.
+    echo Missing bin\ffmpeg.exe. Place ffmpeg.exe in bin.
 )
 
 if not exist bin\ffprobe.exe (
-    echo Missing bin\ffprobe.exe. Place ffprobe.exe in social-engine\bin.
+    echo Missing bin\ffprobe.exe. Place ffprobe.exe in bin.
 )
 
 echo Setup complete.

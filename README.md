@@ -14,7 +14,7 @@ The app have only being tested on Windows 11
 
 ## What This Project Produces
 
-After a run, generated files are written in `social-engine/output/`:
+After a run, generated files are written in `output/`:
 
 - `x_post.txt`
 - `generated_copy.json`
@@ -27,7 +27,7 @@ After a run, generated files are written in `social-engine/output/`:
 ## Project Structure
 
 ```text
-social-engine/
+NovaPost/
 |-- .env.example
 |-- setup.bat
 |-- run_gui.bat
@@ -56,8 +56,8 @@ social-engine/
 - NVIDIA NIM API key (required)
 - Optional: ElevenLabs key for premium TTS
 
-FFmpeg is used from local binaries in `social-engine/bin/`.
-`setup.bat` tries to copy `ffmpeg.exe` and `ffprobe.exe` from `social-engine/ffmpeg-build/bin/` automatically when available.
+FFmpeg is used from local binaries in `bin/`.
+`setup.bat` tries to copy `ffmpeg.exe` and `ffprobe.exe` from `ffmpeg-build/bin/` automatically when available.
 
 ## Install FFmpeg Locally (Required)
 
@@ -65,12 +65,12 @@ FFmpeg files are intentionally git-ignored. Each machine must add them locally.
 
 1. Download a Windows FFmpeg build (zip) that includes `ffmpeg.exe` and `ffprobe.exe`.
 2. Extract the zip anywhere temporary.
-3. Copy `ffmpeg.exe` and `ffprobe.exe` from the extracted `bin/` into `social-engine/bin/`.
-4. Optional alternative: copy the extracted folder into `social-engine/ffmpeg-build/` and run `setup.bat` to auto-copy binaries to `social-engine/bin/`.
+3. Copy `ffmpeg.exe` and `ffprobe.exe` from the extracted `bin/` into `bin/`.
+4. Optional alternative: copy the extracted folder into `ffmpeg-build/` and run `setup.bat` to auto-copy binaries to `bin/`.
 5. Verify with:
 
 ```powershell
-Set-Location "c:\path\to\NovaPost\social-engine"
+Set-Location "c:\path\to\NovaPost"
 .\bin\ffmpeg.exe -version
 .\bin\ffprobe.exe -version
 ```
@@ -78,7 +78,7 @@ Set-Location "c:\path\to\NovaPost\social-engine"
 ## Quick Start (Windows)
 
 ```powershell
-Set-Location "c:\path\to\NovaPost\social-engine"
+Set-Location "c:\path\to\NovaPost"
 Copy-Item .env.example .env
 # edit .env and set NVIDIA_NIM_API_KEY
 
@@ -95,7 +95,7 @@ To start GUI panel:
 ## Quick Start (macOS / Linux)
 
 ```bash
-cd /path/to/NovaPost/social-engine
+cd /path/to/NovaPost
 cp .env.example .env
 # edit .env and set NVIDIA_NIM_API_KEY
 
@@ -135,7 +135,7 @@ ELEVENLABS_API_KEY=
 
 ## Prepare Inputs
 
-Put your media in `social-engine/assets/`:
+Put your media in `assets/`:
 
 1. Exactly 1 `.mp4` file
 2. 1 or more images (`.png`, `.jpg`, `.jpeg`)
@@ -195,7 +195,7 @@ These drive LinkedIn slide visuals and subtitle styling choices.
 
 ### 2) Fonts
 
-Fonts are loaded from `social-engine/fonts/`.
+Fonts are loaded from `fonts/`.
 
 - Title font: `Syncopate-Bold.ttf`
 - Body font: `Syncopate-Regular.ttf`
@@ -203,7 +203,7 @@ Fonts are loaded from `social-engine/fonts/`.
 
 If you change fonts:
 
-1. Add new font files to `social-engine/fonts/`
+1. Add new font files to `fonts/`
 2. Update `_title_font` / `_body_font` in `generate.py`
 3. Update `TTS_SUBTITLE_FONT_NAME` in `.env`
 
@@ -240,8 +240,8 @@ For each new machine:
 1. Clone repo
 2. Create `.env` from `.env.example`
 3. Install dependencies (`setup.bat` on Windows, manual venv on macOS/Linux)
-4. Ensure local FFmpeg binaries exist in `social-engine/bin/`
-5. Add your own assets into `social-engine/assets/`
+4. Ensure local FFmpeg binaries exist in `bin/`
+5. Add your own assets into `assets/`
 6. Run `generate.py` or `web_panel.py`
 
 No global Python packages are required if you use the local `venv`.
@@ -263,8 +263,8 @@ Only templates and source code stay tracked.
 - `Expected exactly 1 mp4 in assets/, found 0.`
   - Add one `.mp4` into `assets/`.
 
-- `Missing required binaries in social-engine/bin`
-  - Add `ffmpeg.exe` and `ffprobe.exe` to `social-engine/bin/`.
+- `Missing required binaries in bin`
+  - Add `ffmpeg.exe` and `ffprobe.exe` to `bin/`.
 
 - `NVIDIA_NIM_API_KEY is missing in .env`
   - Set key in `.env`.
@@ -274,5 +274,5 @@ Only templates and source code stay tracked.
 
 ## License Notes
 
-This project includes FFmpeg assets under `social-engine/ffmpeg-build/`.
+This project includes FFmpeg assets under `ffmpeg-build/`.
 Review upstream FFmpeg license files before redistribution.
